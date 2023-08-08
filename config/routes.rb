@@ -2,7 +2,16 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  # root "users#index"
+  unauthenticated :user do
+    root 'splash#index', as: :unauthenticated_root
+  end
+
+  authenticated :user do
+    root 'users#index', as: :authenticated_root
+  end
   devise_for :users
   resources :users
+
+
 end
