@@ -1,14 +1,15 @@
 <!-- app/views/categories/index.html.erb -->
 <h1>Categories</h1>
 <% @categories.each do |category| %>
+    <%= link_to category_products_path(category.id) do %>
   <div class="category">
     <%= image_tag category.image %>
     <h2><%= category.name %></h2>
   </div>
+  <%end%>
 <% end %>
 
 
-<%= link_to "New Category", new_category_path %>
 
 
 
