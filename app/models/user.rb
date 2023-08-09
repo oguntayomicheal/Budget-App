@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
-    has_many :categories, foreign_key: :user_id
-    has_many :products, foreign_key: :user_id
 
-    validates :name, presence: true, uniqueness: true
+  has_many :categories
+  has_many :products
+
+  validates :name, presence: true, uniqueness: true
 end
