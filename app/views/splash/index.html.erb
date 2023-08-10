@@ -1,4 +1,11 @@
-<h1>Welcome to Budget-App</h1>
-<p>Get started by signing up or logging in:</p>
-<a href="<%= new_user_registration_path %>">Sign Up</a>
-<a href="<%= new_user_session_path %>">Log In</a>
+<%= render partial: 'shared/nav', locals: { h1_content: "Budget-App" } %>
+<div class='splash'>
+    <h1>Welcome to Budget-App</h1>
+    <p>Get started by signing up or logging in:</p>
+    <div id='splash_link'>
+        <a href="<%= new_user_registration_path %>">Sign Up</a>
+        <a href="<%= new_user_session_path %>">Log In</a>
+    </div>
+</div>
+
+
