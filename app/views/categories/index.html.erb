@@ -7,10 +7,10 @@
     <h2><%= category.name.capitalize %></h2>
    <p><%= category.created_at.strftime("%e, %b %Y") %></p>
    <p>
-        <% category.products.each do |product| %>
-          <%= product.name %><br>
-        <% end %>
-      </p>
+        
+       $ <%= category_products_sum(category.id) %>
+       
+    </p>
   </div>
   <%end%>
 <% end %>

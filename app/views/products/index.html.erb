@@ -19,6 +19,7 @@
 
     <p><%= product.name.capitalize %></p>
       <p>$ <%= product.amount %></p>
+      <p><%= product.created_at.strftime("%e, %b %Y") %></p>
   </div>
 
 <% end %>

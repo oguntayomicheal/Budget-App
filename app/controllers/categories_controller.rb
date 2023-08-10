@@ -5,8 +5,13 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = @user.categories.includes(:products)
+    @categories = @user.categories
+    # @category_products_sum = get_products_sum(category_id)
   end
+
+  # def get_products_sum(category_id)
+  #   category_id
+  # end
 
   def new
     @user = current_user
