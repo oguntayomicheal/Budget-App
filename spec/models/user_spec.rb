@@ -19,5 +19,4 @@ RSpec.describe User, type: :model do
       expect(assoc.macro).to eq :has_many
     end
   end
-
 end

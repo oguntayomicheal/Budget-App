@@ -11,7 +11,6 @@ RSpec.describe Category, type: :model do
       expect(subject).to_not be_valid
     end
   end
-  
 
   context 'Testing Associations' do
     it 'belongs_to a user' do

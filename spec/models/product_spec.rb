@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-
   subject { Product.new(name: 'Food', amount: 20.0) }
 
   before { subject.save }
@@ -27,7 +26,7 @@ RSpec.describe Product, type: :model do
       expect(subject).to_not be_valid
     end
   end
-  
+
   context 'Testing Associations' do
     it 'belongs_to categories' do
       assoc = Product.reflect_on_association(:category)
