@@ -1,11 +1,25 @@
 require 'rails_helper'
-RSpec.describe 'Categories index Page', type: :feature do
-  scenario 'displays all categories information' do
-    user = User.create(name: 'John Doe', email: 'john@example.com', password: '111111')
-    category1 = Categories.create(name: 'Category 1', user_id: user.id)
 
-    visit categories_path
-    expect(page).to have_content('Cat1')
+RSpec.feature 'Categories index Page', type: :feature do
+    let(:user) { User.create!(name: 'Jane Doe', email: 'janedoe@gmail.com', password: 'jane123') }
+    let(:category) { user.categories.create(name: 'Test Category') }
+    
+    before { sign_in user }
 
-  end
+    it 'viewing categories index page' do
+        visit categories_path
+    
+        expect(page).to have_selector('h1', text: 'Categories')
+
+
+      end
+
+      it 'adding a new category' do
+        visit categories_path
+    
+        click_link 'Add new category'
+    
+        expect(page).to have_current_path(new_category_path)
+      end
+    
 end
