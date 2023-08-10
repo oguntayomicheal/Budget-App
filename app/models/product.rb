@@ -1,6 +1,7 @@
 # app/models/product.rb
 class Product < ApplicationRecord
   belongs_to :user
+  belongs_to :category, optional: true
   has_many :category_products, dependent: :destroy
   has_many :categories, through: :category_products
 

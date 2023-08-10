@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_category
   def set_category
-    @category = Category.find(params[:category_id])
+    @user = current_user
+    @category = @user.categories.find(params[:category_id])
   end
 
   def new
@@ -11,7 +12,7 @@ class ProductsController < ApplicationController
   def create
     @product = @category.products.build(product_params)
     @product.user_id = current_user.id
-    @product.user = current_user
+    @product.category_id = @category.id
 
     if @product.save
       redirect_to category_products_path(@category), notice: 'Product was successfully created.'
@@ -25,5 +26,6 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @products = Product.where(category_id: @category.id)
   end
 end
