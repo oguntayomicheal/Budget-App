@@ -2,17 +2,27 @@
     <%= link_to "Back", categories_path %>
 </button>
 
+<div>
+  <h2>
+    <%= @category_name%>
+  </h2>
+  <p>
+    $ <%= @products.sum(:amount)%>
+  </p>
+
+</div>
 
 
-    <button>
-            <%= link_to "Add transactions", new_category_product_path %>
-     </button>
 
 <% @products.each do |product| %>
      <div class="product">
 
-    <h2><%= product.name %></h2>
-      <h2>$ <%= product.amount %></h2>
+    <p><%= product.name.capitalize %></p>
+      <p>$ <%= product.amount %></p>
   </div>
 
 <% end %>
+
+  <button>
+    <%= link_to "Add transactions", new_category_product_path %>
+  </button>

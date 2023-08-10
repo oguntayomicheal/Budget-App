@@ -4,7 +4,13 @@
     <%= link_to category_products_path(category.id) do %>
   <div class="category">
     <%= image_tag category.image %>
-    <h2><%= category.name %></h2>
+    <h2><%= category.name.capitalize %></h2>
+   <p><%= category.created_at.strftime("%e, %b %Y") %></p>
+   <p>
+        <% category.products.each do |product| %>
+          <%= product.name %><br>
+        <% end %>
+      </p>
   </div>
   <%end%>
 <% end %>

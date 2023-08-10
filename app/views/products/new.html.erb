@@ -23,5 +23,6 @@ rubocop
   <div class="actions">
     <%= f.submit %>
   </div>
+   <%= f.hidden_field :category_id, value: @category.id %>
 <% end %>
 <%= link_to 'Back', category_products_path(@category) %>

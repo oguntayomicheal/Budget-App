@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = @user.categories
+    @categories = @user.categories.includes(:products)
   end
 
   def new

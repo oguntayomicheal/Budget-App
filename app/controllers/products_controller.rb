@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.where(category_id: @category.id)
-  end
+    @products = Product.where(category_id: @category.id).order(created_at: :desc)
+    @category_name = @category.name
+end
 end
