@@ -1,20 +1,25 @@
 <!-- app/views/categories/new.html.erb -->
-<h1>Add a New Category</h1>
+<%= render partial: 'shared/nav', locals: { h1_content: "Categories" } %>
+<button class='cat_back'>
+  <%= link_to "Back", categories_path %>
+</button>
 
-<%= form_with model: @category, url: categories_path, multipart: true do |form| %>
+<section class='cat_form'>
+  <%= form_with model: @category, url: categories_path, multipart: true do |form| %>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label :icon %>
+    <%= form.file_field :image, required: true %>
   </div>
 
   <div class="actions">
     <%= form.submit "Create Category" %>
   </div>
 <% end %>
+</section>
 
-<%= link_to "Back to Categories", categories_path %>
+

@@ -1,30 +1,26 @@
-<h1>Transactions</h1><button>
-
-    <%= link_to "Back", categories_path %>
+<%= render partial: 'shared/nav', locals: { h1_content: "Transactions" } %>
+<button class='cat_back'>
+  <%= link_to "Back", categories_path %>
 </button>
 
-<div>
+<div class='pro_cat'>
   <h2>
-    <%= @category_name%>
+    <%= @category_name%>  
   </h2>
-  <p>
-    $ <%= @products.sum(:amount)%>
+  <p class='cat-amount'>
+   - Total: $ <%= @products.sum(:amount)%>
   </p>
-
 </div>
 
-
-
 <% @products.each do |product| %>
-     <div class="product">
-
-    <p><%= product.name.capitalize %></p>
-      <p>$ <%= product.amount %></p>
-      <p><%= product.created_at.strftime("%e, %b %Y") %></p>
-  </div>
-
+     <div class="each_product">
+      <p><%= product.name.capitalize %></p>
+      <p>$ <%= product.amount %> (<%= product.created_at.strftime("%e, %b %Y") %>)</p>
+    </div>
 <% end %>
 
-  <button>
-    <%= link_to "Add transactions", new_category_product_path %>
-  </button>
+<div class='btn_ctn'>
+    <button class='add_cat'> 
+      <%= link_to "Add transactions", new_category_product_path %>
+    </button>
+</div>
