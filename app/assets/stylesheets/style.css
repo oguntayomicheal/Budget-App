@@ -203,8 +203,11 @@ img {
 /* Products index */
 .pro_cat {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .each_product {

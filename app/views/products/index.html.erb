@@ -1,14 +1,11 @@
 <%= render partial: 'shared/nav', locals: { h1_content: "Transactions" } %>
-<button class='cat_back'>
-  <%= link_to "Back", categories_path %>
-</button>
 
 <div class='pro_cat'>
   <h2>
     <%= @category_name%>  
   </h2>
   <p class='cat-amount'>
-   - Total: $ <%= @products.sum(:amount)%>
+   $ <%= @products.sum(:amount)%>
   </p>
 </div>
 
@@ -18,6 +15,10 @@
       <p>$ <%= product.amount %> (<%= product.created_at.strftime("%e, %b %Y") %>)</p>
     </div>
 <% end %>
+
+<button class='cat_back'>
+  <%= link_to "Back", categories_path %>
+</button>
 
 <div class='btn_ctn'>
     <button class='add_cat'> 
