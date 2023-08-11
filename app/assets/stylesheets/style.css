@@ -86,5 +86,76 @@ input {
   padding: 10px;
 }
 
-
+/* categories page */
+.category {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: white;
+  margin: 15px;
+  border-radius: 5px;
+}
   
+.cat_img_details {
+  display: flex;
+  width: 70%;
+}
+.img_div {
+  width: 100px; /* Set the width of the container */
+  height: 100px;
+}
+
+img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container's width */
+  max-height: 100%;
+}
+
+.cat_details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cat-name {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 0px;
+  margin-top: 25px;
+}
+
+.cat-amount {
+  font-size: 22px;
+  color: #000;
+}
+
+.cat_created {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 0px;
+}
+
+.btn_ctn {
+  display: flex;
+  justify-self: center;
+  background: #5fb523;
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.add_cat {
+  padding: 10px 30vw;
+  width: 95%;
+  margin: 10px auto;
+  background: #5fb523;
+  border: 2px solid #fff;
+}
+
+.add_cat a {
+  color: #fff;
+}
+
+

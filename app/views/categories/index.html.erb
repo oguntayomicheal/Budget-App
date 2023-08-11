@@ -1,24 +1,32 @@
 <!-- app/views/categories/index.html.erb -->
-<h1>Categories</h1>
-<% @categories.each do |category| %>
+<%= render partial: 'shared/nav', locals: { h1_content: "Categories" } %>
+
+<section class='all_categories'>
+  <% @categories.each do |category| %>
     <%= link_to category_products_path(category.id) do %>
-  <div class="category">
-    <%= image_tag category.image %>
-    <h2><%= category.name.capitalize %></h2>
-   <p><%= category.created_at.strftime("%e, %b %Y") %></p>
-   <p>
-        
-       $ <%= category_products_sum(category.id) %>
-       
-    </p>
-  </div>
-  <%end%>
-<% end %>
+      <div class="category">
+        <div class='cat_img_details'>
+          <div class='img_div'>
+            <%= image_tag category.image %>
+          </div>
+          <div class='cat_details'>
+            <h2 class='cat-name'><%= category.name.capitalize %></h2>
+            <p class='cat_created'><%= category.created_at.strftime("%e, %b %Y") %></p>     
+          </div>
+        </div>  
+        <p class='cat-amount'>$ <%= category_products_sum(category.id) %> </p>
+      </div>
+   <%end%>
+  <% end %>
 
+</section>
 
-
-
-
-    <button>
+<div class='btn_ctn'>
+      <button class='add_cat'>
             <%= link_to "Add new category", new_category_path %>
      </button>
+</div>
+
+
+
+
