@@ -2,6 +2,9 @@
 <%= render partial: 'shared/nav', locals: { h1_content: "Categories" } %>
 
 <section class='all_categories'>
+  <% if @categories.empty? %>
+    <h2>Add new category</h2>
+  <%end%>
   <% @categories.each do |category| %>
     <%= link_to category_products_path(category.id) do %>
       <div class="category">
