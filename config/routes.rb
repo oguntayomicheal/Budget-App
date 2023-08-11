@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   resources :users
-  resources :categories do
-    resources :products
+  resources :categories, only: [:index, :new, :create] do
+    resources :products, only: [:index, :new, :create]
   end
 end
