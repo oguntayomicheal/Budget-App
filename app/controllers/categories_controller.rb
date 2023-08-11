@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
   before_action :authenticate_user!, :set_user
   def set_user
@@ -17,7 +19,7 @@ class CategoriesController < ApplicationController
     @user = current_user
     @category = @user.categories.build(category_params)
     if @category.save
-      redirect_to categories_path, notice: "Category created successfully."
+      redirect_to categories_path, notice: 'Category created successfully.'
     else
       render :new
     end
