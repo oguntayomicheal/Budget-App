@@ -63,7 +63,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live demo link](https://budget)
+- [Live demo link](https://budget-app-jvqh.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -71,7 +71,7 @@
 
 ## 💻 Video Demo <a name="live-demo"></a>
 
-- [Video demo link](https://www.loom.com/)
+- [Video demo link](https://www.loom.com/share/0f1b2683575e487c8adaab1b862e6dec?sid=cc654994-cd72-4d5e-8b40-2406fe0ce935)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
