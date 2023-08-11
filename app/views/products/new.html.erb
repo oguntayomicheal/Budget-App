@@ -1,0 +1,34 @@
+<%= render partial: 'shared/nav', locals: { h1_content: "New Transactions" } %>
+<button class='cat_back'>
+  <%= link_to "Back", category_products_path(@category) %>
+</button>
+
+
+<section class='cat_form'>
+  <%= form_with model: @product, url: category_products_path(@category), local: true, class: "form" do |f|%>
+    
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount, required: true %>
+  </div>
+
+      <div class="form-group">
+      <%= f.label :categories, "Select Category/ Categories" %>
+      <%= f.collection_check_boxes :category_ids, Category.where(user_id: current_user.id), :id, :name do |category| %>
+        <div class='checkbox'>
+          <%= category.check_box%>
+          <%= category.label %>
+        </div>
+      <% end %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+   <% end %>
+
+</section>
