@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ProductsController < ApplicationController
   before_action :set_category
   def set_category
