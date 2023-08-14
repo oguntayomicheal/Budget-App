@@ -1,0 +1,27 @@
+<%= render partial: 'shared/nav', locals: { h1_content: "Transactions" } %>
+
+<div class='pro_cat'>
+  <h2>
+    <%= @category_name%>  
+  </h2>
+  <p class='cat-amount'>
+   $ <%= @products.sum(:amount)%>
+  </p>
+</div>
+
+<% @products.each do |product| %>
+     <div class="each_product">
+      <p><%= product.name.capitalize %></p>
+      <p>$ <%= product.amount %> (<%= product.created_at.strftime("%e, %b %Y") %>)</p>
+    </div>
+<% end %>
+
+<button class='cat_back'>
+  <%= link_to "Back", categories_path %>
+</button>
+
+<div class='btn_ctn'>
+    <button class='add_cat'> 
+      <%= link_to "Add transactions", new_category_product_path %>
+    </button>
+</div>
